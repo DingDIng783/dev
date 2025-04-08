@@ -1,0 +1,18 @@
+flowchart TD
+    A[Power On] --> B[Initialize System]
+    B --> C["LCD: 'LocBox Ready! Press to Start'"]
+    C --> D{Button Pressed?}
+    D -- Yes --> E[Generate Random LED Pattern]
+    E --> F[Display Pattern via LEDs]
+    F --> G[Wait for Player Input]
+    G --> H{Input Correct?}
+    H -- Yes --> I[Activate Servo (Unlock Box)]
+    H -- No --> J["LCD: 'Wrong! Try Again'"]
+    I --> K["LCD: 'Unlocked!' + LED Victory Flash"]
+    J --> F
+    K --> L[Game Ends]
+    
+    style A fill:#9f9,stroke:#333
+    style L fill:#f9f,stroke:#333
+    style I fill:#bbf,stroke:#333
+    
